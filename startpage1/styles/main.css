@@ -1,0 +1,585 @@
+/* Designed and produced with love by Magnotec <3 */
+
+/* This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. */
+
+
+/* Variables */
+/* -------- */
+:root {
+  /* Main Colors */
+  /* If touched, make sure to change the main.js colors accordingly under changeTheme(). */
+  --primary-fg: #FFFFFF;
+  --secondary-fg: #666666;
+  
+  --primary-bd: #FFFFFF;
+
+  --primary-bg: #0F110F;
+  --secondary-bg: #222322;
+  --tertiary-bg: #0F110F;
+
+  --primary-fd: #FFFFFF55;
+
+  /* Fonts */
+  --font-accent: "Lexend";
+  --font-accent-alt: "Raleway";
+  --font-default: "Plus Jakarta Sans";
+
+  /* Border Radius */
+  --widget-border-radius: 2em;
+  --wrapper-border-radius: 3em;
+  --icon-border-radius: 4em;
+
+  /* Corner Transition Time Multiplier */
+  /* Higher numbers = slower */
+  --corners-mult: 2;
+
+  /* Border Thickness Multiplier */
+  /* Higher numbers = thicker */
+  --borders-mult: 1;
+
+  /* Default "transition:" value */
+  --transition-default: 
+    margin-top cubic-bezier(0.645, 0.045, 0.355, 1) 500ms,
+    border-radius cubic-bezier(0.545, 0.45, 0.555, 1) calc(0.7s * var(--corners-mult)), 
+    background-color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, 
+    box-shadow cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, 
+    border cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, 
+    opacity cubic-bezier(0.045, 0.345, 0.955, 1) 150ms;
+}
+
+/* Main */
+/* -------- */
+
+body {
+  background-color: var(--primary-bg);
+  font-family: var(--font-default);
+  display: table-cell;
+  padding-bottom: 50px;
+  user-select: none;
+  overflow-x: hidden;
+  scrollbar-color: transparent transparent;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, opacity cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  z-index: 0;
+}
+html {
+  display: table;
+  margin: auto;
+  scrollbar-color: transparent transparent;
+  user-select: none;
+}
+
+/* Keyframes + Animations */
+/* -------- */
+
+/* Info Widget Animations*/
+[anim="reveal-y1"] {
+  transform: translateY(100px);
+  transition: 0.5s transform cubic-bezier(0.045, 0.545, 0.555, 1), 1s opacity cubic-bezier(0.045, 0.545, 0.545, 1), calc(0.7s * var(--corners-mult)) border-radius cubic-bezier(0.545, 0.45, 0.555, 1), background-color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  opacity: 0.1;
+}
+[anim="reveal-y1"].active{
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* Page Load Animations*/
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-210%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInBottom {
+  0% {
+    transform: translateY(101%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.shape-overlays {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+.shape-overlays path:nth-of-type(1) { fill: #99AA99;}
+.shape-overlays path:nth-of-type(2) { fill: #2F332F;}
+.shape-overlays path:nth-of-type(3) { fill: #0F110F;}
+
+/* Settings */
+/* -------- */
+
+/* Main */
+#settings {
+  margin-top: 30vh;
+  position: absolute;
+  z-index: 5;
+  transition: 
+    margin-top cubic-bezier(0.645, 0.045, 0.355, 1) 500ms,
+    border-radius cubic-bezier(0.545, 0.45, 0.555, 1) calc(0.7s * var(--corners-mult)), 
+    background-color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, 
+    box-shadow cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, 
+    border cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, 
+    opacity cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  width: 620px;
+  height: 250px;
+  border-radius: var(--wrapper-border-radius);
+  background-color: var(--primary-bg);
+  border: calc(var(--borders-mult) * 3px) var(--primary-bd) solid;
+  opacity: 0;
+  display: initial;
+  box-shadow: 0 0 60px 30px var(--primary-fd);
+}
+#settings wrapper.header {
+  position: absolute;
+  display: grid;
+  width: 580px;
+  height: 20px;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: row dense;
+  grid-gap: 20px; 
+  padding: 20px;
+  padding-top: 10px;
+  transition: var(--transition-default);
+}
+#settings wrapper.header widget.header-button { 
+  width: auto;
+  height: 20px;
+  text-align: center;
+  opacity: 1;
+  transition: var(--transition-default);
+  border-radius: var(--widget-border-radius);
+  background-color: var(--primary-bg);
+  border: calc(var(--borders-mult) * 1px) var(--primary-bd) solid;
+} 
+#settings wrapper.header widget.header-button:hover { 
+  opacity: 0.5;
+} 
+#settings wrapper.header widget.header-button .icon {
+  transform: scale(0.7);
+  position: relative;
+  display: inline-block;
+  margin-right: 5px;
+  bottom: 3px;
+  transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  color: var(--primary-fg)
+}
+
+/* About Panel */
+#settings > wrapper:nth-of-type(3) {
+  opacity: 0;
+  pointer-events: none;
+  margin-top: 10px;
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 390ms;
+}
+#settings > wrapper:nth-of-type(3) > p {
+  color: var(--primary-fg);
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  left: -10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+#settings > wrapper:nth-of-type(3) > p:nth-of-type(2) {
+  top: 100px;
+  color: var(--primary-fg);
+  font-size: 9px;
+}
+#settings > wrapper:nth-of-type(3) > h1 {
+  position: absolute;
+  color: var(--primary-fg);
+  top: 20px;
+  width: 100%;
+  left: -10px;
+  text-align: center;
+}
+#settings wrapper.grid {
+  display: grid;
+  width: 600px;
+  height: 200px;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; 
+  padding: 10px;
+  padding-top: 50px;
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 390ms;
+}
+
+/* Widget Globals */
+#settings > wrapper.grid > widget {
+  cursor: pointer;
+  border-radius: var(--widget-border-radius);
+  transition: var(--transition-default);
+  background-color: var(--primary-bg);
+  width: auto;
+  height: 70px;
+  opacity: 1;
+  border: calc(var(--borders-mult) * 1px) var(--primary-bd) solid;
+}
+#settings > wrapper.grid > widget:hover {
+  opacity: 0.5;
+}
+#settings > wrapper.grid > widget > .icon {
+  position: relative;
+  left: 11px;
+  top: 30%;
+  transform: scale(1.5);
+  border: none;
+  color: var(--primary-fg);
+  transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+}
+#settings > wrapper.grid > widget > h1 {
+  position: sticky;
+  margin-top: -13px;
+  margin-left: 50px;
+  font-size: 13px;
+  color: var(--primary-fg);
+  transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+}
+#settings > wrapper.grid > widget > h2 {
+  position: sticky;
+  margin-top: 5px;
+  margin-left: 50px;
+  font-size: 12px;
+  color: var(--secondary-fg);
+  transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+}
+
+
+
+/* Main */
+/* -------- */
+
+/* Clock + Date + Wrapper */
+#main {
+  margin-top: 30vh;
+  position: relative;
+  z-index: 2;
+  transition: 0.5s margin-top cubic-bezier(0.645, 0.045, 0.355, 1);
+  background: none;
+  border: none;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-name: slideInTop;
+}
+#main .border {
+  width: 620px;
+  height: 250px;
+  border-radius: var(--wrapper-border-radius);
+  background-color: var(--primary-bg);
+  border: calc(var(--borders-mult) * 3px) var(--primary-bd) solid;
+  box-shadow: none;
+  transition: calc(0.7s * var(--corners-mult)) border-radius cubic-bezier(0.545, 0.45, 0.555, 1), background-color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, border cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, box-shadow cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+}
+#main .clock {
+  margin-top: 25px;
+  width: 530px;
+  margin-left: 50px;
+  height: 130px;
+  font-size: 95px;
+  color: var(--primary-fg);
+  position: absolute;
+  text-align: center;
+  user-select: none;
+  border: none;
+  font-family: var(--font-accent);
+  transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+}
+#main .date {
+  margin-top: 145px;
+  width: 530px;
+  margin-left: 35px;
+  font-size: 50px;
+  color: var(--primary-fg);
+  font-family: var(--font-accent-alt);
+  position: absolute;
+  justify-self: center;
+  text-align: center;
+  user-select: none;
+  transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+}
+
+/* Settings Popup */
+#main .wrapper {
+  position: absolute;
+  width: 620px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  z-index: -2;
+  text-align: center;
+  margin-top: -40px;
+  transition: margin-top cubic-bezier(0.645, 0.045, 0.355, 1) 200ms, opacity cubic-bezier(0.145, 0.045, 0.355, 1) 300ms;
+  opacity: 0;
+}
+#main .wrapper:hover {
+  opacity: 1;
+  margin-top: -80px;
+}
+#main .wrapper > .icon {
+  background-color: transparent;
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+  margin-left: 0px;
+  padding: 2px;
+  border-radius: 9999%;
+  color: var(--primary-fg);
+}
+#main .wrapper > .icon:hover {
+  color: var(--secondary-fg);
+}
+
+
+/* Links */
+/* -------- */
+
+/* Arrow */
+#links .arrow {
+  position: relative;
+  width: 620px;
+  z-index: -2;
+  margin-top: -110px;
+  text-align: center;
+  transform: translateY(0px) rotateX(0deg);
+  transition: transform cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+  color: var(--primary-fg);
+}
+#links:hover .arrow {
+  transform: translateY(20px) rotateX(180deg);
+}
+
+
+/* Content */
+#links {
+  height: 20px;
+  padding-bottom: 20vh;
+  z-index: -1;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-name: slideInTop;
+}
+#links .wrapper .items {
+  display: inline-block;
+  padding-top: 30px;
+  margin: auto 0 auto -30px;
+  width: 600px;
+  cursor: pointer;
+}
+#links .wrapper .items a {
+  color: var(--primary-fg);
+  font-size: 29px;
+  opacity: 1;
+  text-decoration: none;
+  transition: opacity linear 200ms;
+}
+#links .wrapper .items a:hover {
+  margin-bottom: 2px;
+  opacity: 0.5;
+}
+#links .wrapper .items li {
+  align-self: center;
+  display: inline-block;
+  list-style-type: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+#links .wrapper {
+  position: relative;
+  opacity: 0;
+  transition: opacity linear 300ms, margin-top cubic-bezier(0.645, 0.045, 0.355, 1) 200ms;
+  width: 620px;
+  height: 200px;
+  margin-top: -100px;
+  color: var(--primary-fg);
+  font-size: 20px;
+  font-weight: 100;
+  align-self: center;
+  text-align: center;
+}
+#links .wrapper:hover {
+  opacity: 1;
+  margin-top: -10px;
+}
+
+
+
+/* Info */
+/* -------- */
+
+/* Wrapper */
+#info {
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  margin-top: -80px;
+  top: calc((100vh) + 60px);
+  width: 100%;
+  height: 370px;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-name: slideInBottom;
+  text-align: center;
+}
+#info wrapper.border {
+  position: absolute;
+  width: 850px;
+  height: 1000px;
+  display: block;
+  top: 20px;
+  left: calc(50% - (850px / 2));
+
+  background-color: var(--primary-bg);
+  border: calc(var(--borders-mult) * 3px) solid var(--primary-bd);
+  border-bottom: 0;
+  z-index: -5;
+  border-radius: var(--wrapper-border-radius) var(--wrapper-border-radius) 0 0;
+  transition: var(--transition-default);
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-name: slideInBottom;
+}
+
+/* Arrow */
+#info > wrapper.arrow {
+  position: relative;
+  width: 820px;
+  z-index: 2;
+  margin-top: 0px;
+  margin-bottom: 90px;
+  text-align: center;
+}
+#info > wrapper.arrow > .icon {
+  margin-top: -25px;
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+  color: var(--primary-fg);
+  transform: translateY(0px) rotateX(0deg);
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+#info > wrapper.arrow > .icon:hover {
+  color: var(--primary-fd);
+  opacity: 0.5;
+}
+
+/* Widget Globals */
+#info wrapper.grid widget { 
+  border-radius: var(--widget-border-radius);
+  height: 145px;
+  width: 375px;
+  border: calc(var(--borders-mult) * 1px) solid var(--primary-bd);
+  background-color: var(--primary-bg);
+  z-index: -2;
+  margin: 0 auto;
+}
+#info wrapper.grid widget:nth-child(odd) { 
+  grid-column: 1;
+  margin-top: -35%;
+}
+#info wrapper.grid widget:nth-child(even) { 
+  grid-column: 2;
+  margin-top: 35%;
+}
+#info wrapper.grid widget .icon {
+  top: 26px;
+  left: 25px;
+  transform: scale(2.3);
+  position: absolute;
+  border-radius: 9999px;
+  border: none;
+  padding: 2px 2px 2px 2px;
+  color: var(--primary-fg);
+}
+#info wrapper.grid {
+  justify-content:center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows:max-content;
+  grid-auto-flow: row;
+  grid-gap: 20px;
+  position: absolute;
+  width: 810px;
+  padding: 20px;
+  height: fit-content;
+  left: calc(50% - (850px / 2));
+  top: 40px;
+  z-index: -5;
+  background-color: transparent;
+}
+#info wrapper.grid widget .widget-title {
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  font-weight: lighter;
+  color: var(--primary-fg);
+  position: absolute; 
+  top: calc(100% - 35px);
+}
+#info wrapper.grid widget .items {
+  margin-left: 50px;
+  margin-top: 10px;
+  padding-right: 10px;
+  list-style-type: none;
+  cursor: pointer;
+  color: var(--primary-fg);
+}
+#info wrapper.grid widget .items .widget-text[type="normal"] {
+  margin-top: 5px;
+  padding-right: 10px;
+  list-style-type: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--primary-fg);
+}
+#info wrapper.grid widget .items .widget-text[type="small"] {
+  position: absolute;
+  font-size: 13px;
+  color: var(--secondary-fg);
+  margin-top: 5px;
+}
+#info wrapper.grid widget .separator {
+  position: absolute;
+  top: 10px;
+  left: 75px;
+  height: 70px;
+  width: 2px;
+  background-color: var(--secondary-fg);
+  border: none;
+}
+
+/* Widget Specifics*/
+#info wrapper.grid widget[widgetid="quote"] .items .widget-text[type="normal"] {
+  font-size: 15px;
+}
+
+/* Footer */
+/* -------- */
+
+/* Main */
+footer {
+  position: absolute;
+  bottom: calc(-100% - 70px);
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+/* Horizontal Line */
+footer > hr:nth-of-type(1) {
+  --gap-width: 25%;
+  width: calc(100% - (2 * var(--gap-width)));
+  margin: 0 auto;
+  margin-top: calc(10vh);
+  border-radius: 5px;
+  border: calc(var(--borders-mult) * 0px) solid var(--primary-fg);
+  text-align:center;
+}

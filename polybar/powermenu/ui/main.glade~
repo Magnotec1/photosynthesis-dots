@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.22"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="ypad">1</property>
+    <property name="icon-name">notification-disabled-alert-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image10">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="xpad">0</property>
+    <property name="ypad">0</property>
+    <property name="pixel-size">18</property>
+    <property name="icon-name">bluetooth-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image13">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">system-shutdown-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image14">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="xpad">0</property>
+    <property name="ypad">0</property>
+    <property name="pixel-size">18</property>
+    <property name="icon-name">preferences-system-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image15">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">system-log-out-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image16">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">system-suspend</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="xpad">0</property>
+    <property name="ypad">0</property>
+    <property name="icon-name">network-wireless</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="ypad">1</property>
+    <property name="icon-name">network-wireless</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="ypad">1</property>
+    <property name="icon-name">bluetooth-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image5">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">system-reboot</property>
+  </object>
+  <object class="GtkImage" id="image8">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="xalign">0</property>
+    <property name="yalign">0</property>
+    <property name="pixel-size">26</property>
+    <property name="icon-name">speaker</property>
+  </object>
+  <object class="GtkImage" id="image9">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="xpad">0</property>
+    <property name="ypad">0</property>
+    <property name="icon-name">notification-disabled-alert-symbolic</property>
+  </object>
+  <object class="GtkWindow" id="window1">
+    <property name="width-request">266</property>
+    <property name="height-request">242</property>
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="has-focus">True</property>
+    <property name="is-focus">True</property>
+    <property name="receives-default">True</property>
+    <property name="resizable">False</property>
+    <property name="default-width">610</property>
+    <property name="default-height">610</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
+    <property name="urgency-hint">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="width-request">273</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="has-focus">True</property>
+        <property name="is-focus">True</property>
+        <child>
+          <object class="GtkImage" id="profilePicture">
+            <property name="width-request">59</property>
+            <property name="height-request">59</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixel-size">59</property>
+            <property name="icon_size">6</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">15</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="profileLabel">
+            <property name="width-request">118</property>
+            <property name="height-request">80</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Magnotec</property>
+            <attributes>
+              <attribute name="font-desc" value="Golos Text Medium 12"/>
+              <attribute name="size" value="16384"/>
+            </attributes>
+            <style>
+              <class name="w"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">85</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="wifiSwitch">
+            <property name="label" translatable="yes"> Networking</property>
+            <property name="width-request">205</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image3</property>
+            <property name="always-show-image">True</property>
+            <signal name="toggled" handler="onWifi" swapped="no"/>
+            <accelerator key="a" signal="clicked"/>
+            <style>
+              <class name="w"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">11</property>
+            <property name="y">102</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="bluetoothSwitch">
+            <property name="label" translatable="yes"> Bluetooth</property>
+            <property name="width-request">205</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image4</property>
+            <property name="always-show-image">True</property>
+            <signal name="toggled" handler="onBluetooth" swapped="no"/>
+            <accelerator key="d" signal="clicked"/>
+          </object>
+          <packing>
+            <property name="x">11</property>
+            <property name="y">194</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="settingsButton">
+            <property name="width-request">29</property>
+            <property name="height-request">29</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image14</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="onSettings" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">205</property>
+            <property name="y">33</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="settingsButtonWifi">
+            <property name="width-request">36</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image2</property>
+            <property name="always-show-image">True</property>
+            <signal name="pressed" handler="onSettingsWifi" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">226</property>
+            <property name="y">102</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="settingsButtonDND">
+            <property name="width-request">36</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image9</property>
+            <property name="always-show-image">True</property>
+            <signal name="pressed" handler="onSettingsDND" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">226</property>
+            <property name="y">148</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="settingsButtonBluetooth">
+            <property name="width-request">36</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image10</property>
+            <property name="always-show-image">True</property>
+            <signal name="pressed" handler="onSettingsBluetooth" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">226</property>
+            <property name="y">194</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="dndSwitch">
+            <property name="label" translatable="yes"> Do Not Disturb</property>
+            <property name="width-request">205</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image1</property>
+            <property name="always-show-image">True</property>
+            <signal name="toggled" handler="onDND" swapped="no"/>
+            <accelerator key="s" signal="clicked"/>
+          </object>
+          <packing>
+            <property name="x">11</property>
+            <property name="y">148</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name=".window"/>
+    </style>
+  </object>
+  <object class="GtkWindow" id="window2">
+    <property name="width-request">342</property>
+    <property name="height-request">56</property>
+    <property name="can-focus">False</property>
+    <property name="receives-default">True</property>
+    <property name="resizable">False</property>
+    <property name="default-width">610</property>
+    <property name="default-height">610</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
+    <property name="urgency-hint">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="transient-for">window1</property>
+    <property name="attached-to">window1</property>
+    <child>
+      <object class="GtkFixed" id="fixed2">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="powerButton">
+            <property name="width-request">65</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image13</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="onPower" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="logoutButton">
+            <property name="width-request">65</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image15</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="onLogout" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">95</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="suspendButton">
+            <property name="width-request">65</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image16</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="onSuspend" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">182</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="restartButton">
+            <property name="width-request">65</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">image5</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="onRestart" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">267</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="window"/>
+    </style>
+  </object>
+  <object class="GtkAdjustment" id="scaleBrightness">
+    <property name="lower">10</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="scaleVolume">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkWindow" id="window3">
+    <property name="width-request">50</property>
+    <property name="height-request">242</property>
+    <property name="can-focus">False</property>
+    <property name="receives-default">True</property>
+    <property name="resizable">False</property>
+    <property name="default-width">610</property>
+    <property name="default-height">610</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
+    <property name="urgency-hint">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="transient-for">window1</property>
+    <property name="attached-to">window1</property>
+    <child>
+      <object class="GtkFixed" id="fixed3">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkScale" id="volumeScale">
+            <property name="width-request">36</property>
+            <property name="height-request">210</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="orientation">vertical</property>
+            <property name="adjustment">scaleVolume</property>
+            <property name="digits">0</property>
+            <property name="draw-value">False</property>
+            <property name="value-pos">left</property>
+            <signal name="value-changed" handler="onVolumeChanged" swapped="no"/>
+          </object>
+          <packing>
+            <property name="y">27</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScale" id="brightnessScale">
+            <property name="width-request">20</property>
+            <property name="height-request">210</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="orientation">vertical</property>
+            <property name="adjustment">scaleBrightness</property>
+            <property name="digits">0</property>
+            <property name="draw-value">False</property>
+            <property name="value-pos">left</property>
+            <signal name="value-changed" handler="onBrightnessChanged" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">30</property>
+            <property name="y">27</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixel-size">19</property>
+            <property name="icon-name">computer-symbolic</property>
+          </object>
+          <packing>
+            <property name="x">37</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage">
+            <property name="width-request">20</property>
+            <property name="height-request">20</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="pixel-size">19</property>
+            <property name="icon-name">audio-speakers-symbolic</property>
+          </object>
+          <packing>
+            <property name="x">7</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="window"/>
+    </style>
+  </object>
+</interface>

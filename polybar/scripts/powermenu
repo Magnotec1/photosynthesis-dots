@@ -1,0 +1,78 @@
+#!/bin/bash
+my_term="powermenu.py"
+
+# get terminal emulator pid ex: 44040485
+xms=$(xdotool getmouselocation --shell | grep X= | sed -e "s/X=//g")
+scr=$(($xms / 1920))
+
+pid=$(xdotool search --class "$my_term")
+
+for id in $pid
+do
+    wid=$(printf 0x%x "$id")
+    if ! [ $wid == "0x0" ]; then
+        mapw -t $wid
+        xprop -id $wid -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"
+    fi
+done
+
+wid=$(printf 0x%x "$id")
+if [ $wid == "0x0" ]; then
+        /bin/python3 ~/.config/polybar/powermenu/powermenu.py &
+        exit 1
+    else
+        set -f
+        array=(${pid// / })
+        if [ $scr = 0 ]; then
+                win1w=$(eval $(xwininfo -id ${array[0]} | sed -n -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p") && echo -n "$w")
+                if [ $win1w ==  "273" ]; then 
+                        xdotool windowmove ${array[0]} 1640 40
+                    elif [ $win1w ==  "342" ]; then
+                        xdotool windowmove ${array[0]} 1572 280
+                    elif [ $win1w ==  "66" ]; then
+                        xdotool windowmove ${array[0]} 1572 40
+                fi
+                win2w=$(eval $(xwininfo -id ${array[1]} | sed -n -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p") && echo -n "$w")
+                if [ $win2w ==  "273" ]; then 
+                        xdotool windowmove ${array[1]} 1640 40
+                    elif [ $win2w ==  "342" ]; then
+                        xdotool windowmove ${array[1]} 1572 280
+                    elif [ $win2w ==  "66" ]; then
+                        xdotool windowmove ${array[1]} 1572 40
+                fi
+                win3w=$(eval $(xwininfo -id ${array[2]} | sed -n -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p") && echo -n "$w")
+                if [ $win3w ==  "273" ]; then 
+                        xdotool windowmove ${array[2]} 1640 40
+                    elif [ $win3w ==  "342" ]; then
+                        xdotool windowmove ${array[2]} 1572 280
+                    elif [ $win3w ==  "66" ]; then
+                        xdotool windowmove ${array[2]} 1572 40
+                fi
+            else 
+                win1w=$(eval $(xwininfo -id ${array[0]} | sed -n -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p") && echo -n "$w")
+                if [ $win1w ==  "273" ]; then 
+                        xdotool windowmove ${array[0]} 3560 40
+                    elif [ $win1w ==  "342" ]; then
+                        xdotool windowmove ${array[0]} 3492 280
+                    elif [ $win1w ==  "66" ]; then
+                        xdotool windowmove ${array[0]} 3492 40
+                fi
+                win2w=$(eval $(xwininfo -id ${array[1]} | sed -n -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p") && echo -n "$w")
+                if [ $win2w ==  "273" ]; then 
+                        xdotool windowmove ${array[1]} 3560 40
+                    elif [ $win2w ==  "342" ]; then
+                        xdotool windowmove ${array[1]} 3492 280
+                    elif [ $win2w ==  "66" ]; then
+                        xdotool windowmove ${array[1]} 3492 40
+                fi
+                win3w=$(eval $(xwininfo -id ${array[2]} | sed -n -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p") && echo -n "$w")
+                if [ $win3w ==  "273" ]; then 
+                        xdotool windowmove ${array[2]} 3560 40
+                    elif [ $win3w ==  "342" ]; then
+                        xdotool windowmove ${array[2]} 3492 280
+                    elif [ $win3w ==  "66" ]; then
+                        xdotool windowmove ${array[2]} 3492 40
+                fi
+    fi
+
+fi

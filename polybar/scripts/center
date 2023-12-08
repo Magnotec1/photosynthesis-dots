@@ -1,0 +1,42 @@
+#!/bin/bash
+my_term="center.py"
+
+# get terminal emulator pid ex: 44040485
+xms=$(xdotool getmouselocation --shell | grep X= | sed -e "s/X=//g")
+scr=$(($xms / 1920))
+
+pid=$(xdotool search --class "$my_term")
+
+for id in $pid
+do
+    wid=$(printf 0x%x "$id")
+    if ! [ $wid == "0x0" ]; then
+        mapw -t $wid
+        xprop -id $wid -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"
+    fi
+done
+
+wid=$(printf 0x%x "$id")
+if [ $wid == "0x0" ]; then
+        /bin/python3 ~/.config/polybar/centermenu/center.py &
+        exit 1
+        set -f
+        array=(${pid// / })
+    else
+        array=(${pid// / })
+        if [ $scr = 0 ]; then
+                xdotool windowmove ${array[0]} 740 70
+                xdotool windowmove ${array[1]} 740 284
+                xdotool windowmove ${array[2]} 1003 70
+                xdotool windowmove ${array[3]} 740 40
+            else 
+                xdotool windowmove ${array[0]} 2660 70
+                xdotool windowmove ${array[1]} 2660 284 
+                xdotool windowmove ${array[2]} 2923 70
+                xdotool windowmove ${array[3]} 2660 40
+    fi
+
+fi
+    
+
+

@@ -1,0 +1,1 @@
+gsettings get org.gnome.desktop.notifications show-banners | tr -d '\n'

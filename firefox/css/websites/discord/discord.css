@@ -1,0 +1,49 @@
+@-moz-document domain("discord.com") {
+      :root, .theme-dark, .theme-light {
+  --tint-color: #0F110FAA;
+  --background-tertiary: var(--tint-color) !important;
+  --background-secondary: var(--tint-color) !important;
+  --background-secondary-alt: var(--tint-color) !important;
+  --background-primary: var(--tint-color) !important;
+  --background-floating: var(--tint-color) !important;
+  --channeltextarea-background: var(--tint-color) !important;
+  --background-accent: var(--tint-color) !important;
+  --status-green-600: #AAAAAA !important;
+  --scrollbar-auto-scrollbar-color-thumb: var(--tint-color) !important;
+  --scrollbar-auto-scrollbar-color-track: var(--tint-color) !important;
+} 
+    .bar-2eAyLE {
+        color: #0F110F !important;
+    }
+    .folder-241Joy, .folderIconWrapper-1oRIZr {
+        background-color: #0F110F !important;
+    }
+    .barButtonBase-Sk2mdB {
+        color: #0F110F !important;
+    }
+    .channelTextArea-1FufC0 {
+        border: 2px solid #FFFFFF !important;
+    }
+    .jumpToPresentBar-1cEnH0 {
+        right: 12px !important;
+    }
+    .container-YkUktl {
+        border-width: 2px !important;
+        border-style: solid !important;
+        border-color: white !important;
+        border-radius: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    .wrapper-1gVUIN {
+       border-width: 2px !important;
+       border-style: solid !important;
+       border-color: white !important;
+       border-radius: 10px !important; 
+       margin-right: 10px !important;
+    }
+    .container-1zzFcN {
+        border: 2px solid white !important;
+        border-radius: 10px !important;
+        margin-bottom: 10px !important;
+    }
+}

@@ -1,0 +1,299 @@
+:root {
+  --color-main-bg: #0F110F;
+  --color-secondary-bg: #232820;
+  --color-tertiary-bg: #3E4A36;
+}
+/* Hiding Buttons */
+#tracking-protection-icon-container, 
+#identity-permission-box, 
+#page-action-buttons, 
+#identity-icon-box, 
+#firefox-view-button, 
+#alltabs-button, 
+#appMenu-new-private-window-button2, 
+#appMenu-find-button2, 
+#appMenu-print-button2, 
+#appMenu-save-file-button2,
+#appMenuRecentlyClosedWindows,
+#appMenu-help-button2,
+#appMenu-new-tab-button2{
+  display: none;
+}
+#unified-extensions-button {
+  transition: opacity 300ms ease-in-out;
+  opacity: 0;
+}
+#unified-extensions-button:hover {
+  opacity: 1;
+}
+html#main-window {
+  --button-active-bgcolor: var(--color-main-bg) !important;
+}
+menupopup, panel {
+  border: none;
+  border-radius: 10px !important;
+  --panel-border-color: #FFFFFF !important;
+}
+:is(menupopup, panel)[type="arrow"] {
+  border-radius: 15px !important;
+  border: none !important;
+}
+panel-viewcontainer, panelview {
+  background-color: var(--color-main-bg) !important;
+}
+.panel-header, .panel-subview-body {
+  background-color: var(--color-main-bg) !important;
+}
+.titlebar-spacer {
+  width: 2px !important;
+  display: none;
+}
+
+/* Tab Close Buttons */
+.tabbrowser-tab:not([selected="false"]) .close-icon {
+  display: initial !important;
+  background-color: transparent !important;
+  margin: 0px 0px 0px 5px !important;
+  padding: 0px !important;
+  width: 12px !important;
+  transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important; 
+}
+.tabbrowser-tab:not([selected="true"]) .close-icon {
+  display: initial !important;
+  background-color: transparent !important;
+  margin: 0px 0px 0px 20px !important;
+  padding: 0px !important;
+  width: 12px !important;
+}
+
+/* Reload Button */
+#reload-button, #stop-button {
+   fill: #FFFFFF77 !important;
+   background-color: var(--color-secondary-bg);
+   border-radius: 32px;
+   width: 30px;
+   height: 30px;
+   margin: 5px !important;
+   transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+#reload-button:hover, #stop-button:hover {
+   fill: #FFFFFFFF !important;
+}
+
+#reload-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Forward Button */
+#forward-button {
+   fill: #FFFFFF88 !important;
+   background-color: var(--color-secondary-bg);
+   border-radius: 32px;
+   width: 30px;
+   height: 30px;
+   margin: 5px !important;
+   transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+#forward-button:hover {
+  fill: #FFFFFFFF !important;
+}
+
+#forward-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  box-shadow: none !important;
+}
+
+/* Back Button */
+#back-button {
+  fill: #FFFFFF77 !important;
+  background-color: var(--color-secondary-bg);
+  border-radius: 32px;
+  width: 30px;
+  height: 30px;
+  margin: 5px !important;
+  transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+#back-button:hover {
+  fill: #FFFFFFFF !important;
+}
+
+#back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  box-shadow: none !important;
+}
+
+
+/* Panel Button */
+#PanelUI-menu-button {
+  fill: #FFFFFF77 !important;
+  transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+#PanelUI-menu-button:hover {
+  fill: #FFFFFFFF !important;
+  background-color: transparent !important;
+}
+
+#PanelUI-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  background-color: transparent !important;
+}
+
+.toolbarbutton-1 {
+	--toolbarbutton-hover-background: none !important;
+}
+
+/* Searchbar */
+#urlbar-background,
+#searchbar {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+  background-color: #0F110F !important;
+  border-radius: 12px !important;
+}
+
+#urlbar-background,
+#urlbar-input:not([class]) {
+  position: absolute !important;
+  transform: translateX(39%);
+  transition: transform cubic-bezier(0.445, 0.085, 0.355, 1) 300ms;
+  padding-top: 4px !important;
+  outline: none !important;
+  border: none !important;
+  width: 100% !important;
+  right: 40%;
+  text-align: center !important;
+}
+
+#urlbar-background,
+#urlbar-input:not([class]):focus {
+  transform: translateX(0%);
+  right: 0% !important;
+  text-align: left !important;
+}
+
+#urlbar-input:not([class]).left,
+#urlbar-input:not([class]).left.left #urlbar-input:not([class]):focus {
+  transform: translateX(0%);
+}
+
+/* New Tab Button */
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):not([checked]):not([open]):not(:active):hover
+  > .toolbarbutton-icon,
+toolbar
+  #new-tab-button:not([disabled="true"]):not([checked]):not([open]):not(:active):hover
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: var(--color-main-bg) !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):not([checked]):not([open]):not(:hover)
+  > .toolbarbutton-icon,
+toolbar
+  #new-tab-button:not([disabled="true"]):not([checked]):not([open]):not(:hover)
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+toolbar
+  #new-tab-button:not([disabled="true"]):not([checked]):not([open]):not(:active)
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :hover:active)
+  > .toolbarbutton-icon,
+toolbar
+  #new-tab-button:not([disabled="true"]):-moz-any([open], [checked], :hover:active)
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: var(--color-main-bg) !important;
+}
+  
+/* Tabs */
+
+.tab-content .tab-label-container {
+  max-width: 1px !important;
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+
+.tab-content[selected=""] .tab-label-container {
+  max-width: 100px !important;
+}
+
+.tab-content:not([pinned]){
+  width: max-content;
+  min-width: min-content !important;
+}
+
+.tab-label-container{
+  max-width: 10vw;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+:root:not([privatebrowsingmode="temporary"]):not([firefoxviewhidden]) :is(#firefox-view-button, #wrapper-firefox-view-button) + #tabbrowser-tabs {
+  border-inline-start: none !important;
+  background-color: var(--color-main-bg) !important;
+}
+.browser-toolbar:not(.titlebar-color) {
+  background-color: var(--color-main-bg) !important;
+  background-image: none !important;
+}
+
+#navigator-toolbox {
+  background-color: var(--color-main-bg) !important;
+  border-bottom: none !important;
+}
+
+#nav-bar:not([tabs-hidden="true"]) {
+  background-color: var(--color-main-bg) !important;
+  box-shadow: none !important;
+}
+
+.tabbrowser-tab .tab-background {
+  border-radius: 32px !important;
+  transition: background-color 300ms ease, transform 300ms ease;
+  background-color: var(--color-secondary-bg) !important;
+}
+.tabbrowser-tab[selected="true"] .tab-background {
+  background-color: var(--color-tertiary-bg) !important;
+}
+.tabbrowser-tab:hover .tab-background {
+  transform: scale(0.96);
+}
+
+.tabbrowser-tab[fadein] {
+  flex: 0 !important;
+  max-width: min-content !important;
+  min-width: min-content !important;
+}
+
+/* Megabar */
+#urlbar[breakout][breakout-extend][open] {
+  transition: opacity linear 300ms !important;
+  border-radius: 20px;
+  border: none !important;
+  opacity:1 !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
+  transition: opacity linear 300ms !important;
+  opacity: 0 !important;
+}

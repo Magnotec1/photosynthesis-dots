@@ -1,0 +1,147 @@
+@-moz-document domain("music.youtube.com") {
+    ytmusic-browse-response[has-background]:not([disable-gradient]) .background-gradient.ytmusic-browse-response, 
+    body, 
+    #nav-bar-background.ytmusic-app-layout, 
+    ytmusic-player-bar {
+        background-image: none !important;
+        background-color: #0F110F !important;
+    }
+    
+    .ytmusic-settings-button {
+        margin-left: 0px;
+        margin-right: -30px;
+        right: -3vw;
+    }
+    .image.ytmusic-immersive-header-renderer {
+        display: none !important;
+    }
+    ytmusic-immersive-header-renderer {
+        background-color: #0F110F !important;
+    }
+    .content-container-wrapper.ytmusic-immersive-header-renderer, .gradient-container {
+        background: transparent !important;
+    }
+    * {
+        font-family: "Plus Jakarta Sans" !important;
+    }
+    
+    .immersive-background, 
+    ytmusic-detail-header-renderer.ytmusic-editable-playlist-detail-header-renderer, 
+    #header.ytmusic-browse-response, 
+    ytmusic-detail-header-renderer,
+    .content.ytmusic-player-page {
+        background-color: #0F110F !important;
+    }
+    
+    #container.ytmusic-multi-select-menu-renderer, 
+    ytmusic-multi-select-menu-renderer, 
+    #contentWrapper.tp-yt-iron-dropdown, 
+    #items.ytmusic-multi-select-menu-renderer,
+    tp-yt-paper-dropdown,
+    ytmusic-search-box.ytmusic-nav-bar[opened],
+    #suggestion-list,
+    .search-box,
+    ytmusic-search-suggestions-section,
+    ytmusic-search-suggestion {
+        background: #222322 !important;
+        border: none !important;
+    }
+    .search-box {
+        border-radius: 30px 30px 0px 0px !important;
+    }
+    #suggestion-list {
+        border-radius: 0px 0px 30px 30px !important;
+    }
+    
+    yt-img-shadow[object-fit="COVER"] img.yt-img-shadow, 
+    #background.ytmusic-item-thumbnail-overlay-renderer, 
+    #content.ytmusic-item-thumbnail-overlay-renderer, 
+    .song-media-controls.ytmusic-player, 
+    ytmusic-player-page:not([player-fullscreened_]) #player.ytmusic-player-page, 
+    ytmusic-multi-select-menu-renderer, 
+    #container.ytmusic-multi-select-menu-renderer, 
+    #contentWrapper.tp-yt-iron-dropdown,
+    ytmusic-search-box.ytmusic-nav-bar[opened] {
+        border-radius: 15px !important;
+    }
+    
+    #container.ytmusic-multi-select-menu-renderer, 
+    button.ytmusic-sort-filter-button-renderer,
+    ytmusic-search-box.ytmusic-nav-bar, 
+    ytmusic-search-box[is-bauhaus-sidenav-enabled]:not([opened]):not([has-query]) .search-box.ytmusic-search-box {
+        border: none !important;
+        border-radius: 30px !important;
+    }
+    
+    ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"], 
+    ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"] .image.ytmusic-thumbnail-renderer{
+        border-radius: 30px !important;
+    }
+    .toast-button.yt-notification-action-renderer, ytd-multi-page-menu-renderer, .ytmusic-menu-popup-renderer {
+        border-radius: 15px !important;
+        background-color: #222322 !important;
+        border: none !important;
+    }
+    .yt-spec-button-shape-next--call-to-action-inverse.yt-spec-button-shape-next--text {
+        color: #555 !important;
+    }
+    #primaryProgress.tp-yt-paper-progress {
+        background: #FFF !important;
+    }
+    
+    #main-panel.ytmusic-player-page {
+        margin: unset;
+        margin-top: -50px !important;
+        transform: scale(0.85)
+    }
+    
+    #contentWrapper.tp-yt-iron-dropdown {
+        margin-top: 5px !important;
+    }
+    #progress-bar.ytmusic-player-bar {
+        --paper-slider-active-color: #FFF !important;
+        --paper-slider-knob-color: #FFF !important;
+    }
+    
+    ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style="STYLE_UNKNOWN"] a.ytmusic-chip-cloud-chip-renderer, 
+    ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style="STYLE_DEFAULT"] a.ytmusic-chip-cloud-chip-renderer,
+    tp-yt-paper-item.ytmusic-guide-entry-renderer, 
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal,
+    ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style="STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE"] a.ytmusic-chip-cloud-chip-renderer {
+        transition: background-color cubic-bezier(0.045, 0.045, 0.755, 1) 200ms;
+    }
+    
+    ytmusic-pivot-bar-item-renderer {
+        transition: color cubic-bezier(0.645, 0.045, 0.355, 1) 200ms;
+    }
+    
+    .av.ytmusic-player-page {
+        transform: scale(1.1);
+    }
+    
+    yt-img-shadow[object-fit="CONTAIN"] img.yt-img-shadow, 
+    ytmusic-item-thumbnail-overlay-renderer:not([play-button-has-background_]):not([play-button-state="default"]) #background.ytmusic-item-thumbnail-overlay-renderer, 
+    ytmusic-item-thumbnail-overlay-renderer[indexed] #background.ytmusic-item-thumbnail-overlay-renderer,
+    .image.ytmusic-player-bar,
+    ytmusic-two-row-item-renderer[has-thumbnail-corner-overlay] .thumbnail-overlay.ytmusic-two-row-item-renderer {
+        border-radius: 10px !important;
+    }
+    
+    ytmusic-carousel[num-items-per-column="2"] #items.ytmusic-carousel > .ytmusic-carousel:nth-child(2n), ytmusic-carousel[num-items-per-column="3"] #items.ytmusic-carousel > .ytmusic-carousel:nth-child(3n), ytmusic-carousel[num-items-per-column="4"] #items.ytmusic-carousel > .ytmusic-carousel:nth-child(4n), ytmusic-carousel[num-items-per-column="5"] #items.ytmusic-carousel > .ytmusic-carousel:nth-child(5n) {
+        margin-bottom: 16px !important;
+    }
+    #player-bar-background.ytmusic-app-layout, 
+    .ytmusic-guide-renderer, 
+    ytmusic-guide-renderer, 
+    ytmusic-app[is-bauhaus-sidenav-enabled] #guide-content.ytmusic-app, .left-content {
+        background: #0F110F !important;
+    }
+    yt-page-navigation-progress.ytmusic-app {
+        --yt-page-navigation-progress-color: #222322 !important;
+        --yt-page-navigation-container-color: #0F110F !important;
+    }
+    #guide-content > ytmusic-guide-renderer[is-guide-persistent] {
+        padding-top: 11px !important;
+    }
+}
+

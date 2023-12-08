@@ -1,0 +1,1 @@
+rfkill list bluetooth | grep "Soft blocked" | sed "s/Soft blocked://g" | sed "s/ //g" | sed "s/    //g"

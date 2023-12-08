@@ -1,0 +1,14 @@
+@-moz-document url-prefix(about:), url-prefix(chrome: //browser) {
+  :root {
+	--in-content-page-background: #0F110F !important; 
+  }
+	body, hbox.sticky-inner-container, .sticky-container, search-textbox, listheader, #handlersView, *[type="text"] checkbox {
+		background: #0F110F !important;
+		background-color: #0F110F !important;
+		color:white !important;
+	}
+	.searchBarImage {
+		fill: #0F110F !important;
+		stroke: white;
+	}
+}

@@ -1,0 +1,45 @@
+configuration {
+	hover-select: true;
+  me-select-entry: "";
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+}
+
+@import "../Themes/style.rasi"
+
+window {
+  transparency:	"real";
+  width:		  151px;
+  height:		  73px;
+  location: north;
+  y-offset: 40px;
+  x-offset: -875px;
+  border-radius: 15px;
+}
+
+mainbox { children: [ listview ]; }
+
+listview {
+    cycle:      true;
+    dynamic:    true;
+    layout:     horizontal;
+    padding:    10px;
+}
+
+element {
+  padding:		0px 0px 0px 0px;
+  border-radius:	10px;
+}
+
+element-text {
+  margin:		5px 0px 0px 0px;
+  padding:		4px 5px 4px 5px;
+  font:			"JetBrains Mono Nerd Font 24";
+  background-color:	inherit;
+  text-color:		inherit; 
+}
+
+element selected {
+  background-color:	@fg;
+  text-color:		@bg;
+}
+

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.22"/>
+  <object class="GtkImage" id="worldImage">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">media-skip-backward-symbolic</property>
+  </object>
+  <object class="GtkImage" id="worldImage2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">media-skip-forward-symbolic</property>
+  </object>
+  <object class="GtkWindow" id="window1">
+    <property name="width-request">263</property>
+    <property name="height-request">215</property>
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="has-focus">True</property>
+    <property name="is-focus">True</property>
+    <property name="receives-default">True</property>
+    <property name="resizable">False</property>
+    <property name="type-hint">dialog</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
+    <property name="urgency-hint">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="gravity">north</property>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="has-focus">True</property>
+        <property name="is-focus">True</property>
+        <child>
+          <object class="GtkButton" id="prevButton">
+            <property name="width-request">83</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="has-focus">True</property>
+            <property name="is-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="image">worldImage</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="prevButtonOnClicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">169</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="playPauseButton">
+            <property name="width-request">56</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="playPauseOnClicked" swapped="no"/>
+            <child>
+              <object class="GtkImage" id="musicPlayPauseIcon">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixel-size">24</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">103</property>
+            <property name="y">169</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="timeLabel">
+            <property name="width-request">216</property>
+            <property name="height-request">61</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">01:01 AM</property>
+            <property name="justify">center</property>
+            <attributes>
+              <attribute name="font-desc" value="Golos Text Medium 14"/>
+              <attribute name="stretch" value="ultra-expanded"/>
+              <attribute name="scale" value="1"/>
+              <attribute name="size" value="34816"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">22</property>
+            <property name="y">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="dateLabel">
+            <property name="width-request">202</property>
+            <property name="height-request">25</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Monday, January 01</property>
+            <attributes>
+              <attribute name="size" value="15360"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">27</property>
+            <property name="y">59</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="width-request">242</property>
+            <property name="height-request">63</property>
+            <property name="can-focus">False</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">False</property>
+            <property name="events"/>
+            <signal name="clicked" handler="playPauseOnClicked" swapped="no"/>
+            <child>
+              <object class="GtkFixed">
+                <property name="can-focus">True</property>
+                <property name="has-focus">True</property>
+                <property name="is-focus">True</property>
+                <child>
+                  <object class="GtkLabel" id="musicTitle">
+                    <property name="width-request">100</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">Song </property>
+                    <property name="xalign">0.07000000029802322</property>
+                    <attributes>
+                      <attribute name="size" value="13312"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="y">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkImage" id="musicCover">
+                        <property name="width-request">40</property>
+                        <property name="height-request">40</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="opacity">0.69999999999999996</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="musicPlayPause">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="can-default">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="valign">start</property>
+                        <property name="relief">none</property>
+                        <property name="always-show-image">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">7</property>
+                        <property name="y">7</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="x">165</property>
+                    <property name="y">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="musicArtist">
+                    <property name="width-request">100</property>
+                    <property name="height-request">20</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="opacity">0.5</property>
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">Song </property>
+                    <property name="xalign">0.07000000029802322</property>
+                    <attributes>
+                      <attribute name="size" value="10240"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="y">25</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">93</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="skipButton">
+            <property name="width-request">83</property>
+            <property name="height-request">36</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="has-focus">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="has-default">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">worldImage2</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="skipButtonOnClicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">169</property>
+            <property name="y">169</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="window2">
+    <property name="width-request">263</property>
+    <property name="height-request">210</property>
+    <property name="can-focus">False</property>
+    <property name="receives-default">True</property>
+    <property name="resizable">False</property>
+    <property name="type-hint">dialog</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
+    <property name="urgency-hint">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="gravity">north</property>
+    <property name="transient-for">window1</property>
+    <property name="attached-to">window1</property>
+    <child>
+      <object class="GtkFixed" id="fixed2">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkCalendar" id="mainCalendar">
+            <property name="name">mainCalendar</property>
+            <property name="width-request">240</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="valign">baseline</property>
+            <property name="margin-bottom">10</property>
+            <property name="year">2022</property>
+            <property name="month">5</property>
+            <property name="day">28</property>
+            <property name="show-day-names">False</property>
+            <property name="no-month-change">True</property>
+            <property name="detail-width-chars">49</property>
+            <property name="detail-height-rows">47</property>
+            <signal name="day-selected" handler="daySelected" swapped="no"/>
+            <signal name="day-selected-double-click" handler="clearCalendar" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="window3">
+    <property name="width-request">150</property>
+    <property name="height-request">425</property>
+    <property name="can-focus">False</property>
+    <property name="receives-default">True</property>
+    <property name="resizable">False</property>
+    <property name="type-hint">dialog</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
+    <property name="urgency-hint">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="gravity">north</property>
+    <property name="transient-for">window1</property>
+    <property name="attached-to">window1</property>
+    <child>
+      <object class="GtkFixed" id="fixed3">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkPlacesSidebar" id="filechooser">
+            <property name="width-request">190</property>
+            <property name="height-request">410</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="show-desktop">False</property>
+            <property name="show-trash">False</property>
+            <property name="populate-all">True</property>
+            <signal name="open-location" handler="onSelectFile" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">2</property>
+            <property name="y">13</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="window4">
+    <property name="width-request">456</property>
+    <property name="height-request">33</property>
+    <property name="can-focus">False</property>
+    <property name="receives-default">True</property>
+    <property name="resizable">False</property>
+    <property name="type-hint">dialog</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
+    <property name="urgency-hint">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="gravity">north</property>
+    <property name="transient-for">window1</property>
+    <property name="attached-to">window1</property>
+    <child>
+      <object class="GtkFixed" id="fixed4">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkActionBar">
+            <property name="width-request">436</property>
+            <property name="height-request">33</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixel-size">19</property>
+                <property name="icon-name">audio-card-symbolic</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="gputemp">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="receives-default">True</property>
+                <property name="label" translatable="yes">Undefined</property>
+                <attributes>
+                  <attribute name="foreground" value="#ffffffffffff"/>
+                  <attribute name="size" value="11264"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixel-size">19</property>
+                <property name="icon-name">network-server-symbolic</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="cputemp">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="receives-default">True</property>
+                <property name="label" translatable="yes">Undefined</property>
+                <property name="justify">right</property>
+                <attributes>
+                  <attribute name="foreground" value="#ffffffffffff"/>
+                  <attribute name="size" value="11264"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">10</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

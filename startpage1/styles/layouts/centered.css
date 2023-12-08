@@ -1,0 +1,60 @@
+/* Designed and produced with love by Magnotec <3 */
+
+/* This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. */
+
+html {
+  margin: auto;
+}
+#links > .wrapper {
+  border: none;
+  border-radius: 0;
+  opacity: 0;
+  margin-top: -100px;
+  width: 610px;
+  top: 0px;
+  left: 0px;
+  height: 200px;
+}
+#main, 
+#settings {
+  margin-left: unset;
+  margin-top: 30vh !important;
+  transition: 0.5s margin-top cubic-bezier(0.645, 0.045, 0.355, 1),calc(0.7s * var(--corners-mult)) border-radius cubic-bezier(0.545, 0.45, 0.555, 1), background-color cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, border cubic-bezier(0.645, 0.045, 0.355, 1) 500ms, opacity cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+}
+#settings {
+  margin-top: 30vh;
+  box-shadow: 0 0 60px 30px var(--primary-fd);
+}
+#links .arrow {
+  display:block;
+}
+#links > .wrapper > .items {
+  right: 0px;
+  padding-top: 30px;
+}
+#main .wrapper {
+  opacity: 0;
+  margin-top: -40px;
+  margin-left: unset;
+  border: none;
+  width: 620px;
+  height: unset;
+}
+#main .wrapper:hover {
+  opacity: 1;
+  margin-top: -80px;
+  margin-left: unset;
+  border: none;
+  width: 620px;
+  height: unset;
+}
+#main .wrapper > .icon,
+#main .wrapper > .icon:hover {
+  transform: none;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+#main .wrapper > .icon:nth-of-type(2) {
+  margin-top: 0px;
+  margin-left: 0px;
+}

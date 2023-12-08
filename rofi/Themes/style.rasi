@@ -1,0 +1,11 @@
+
+@theme "/dev/null"
+
+* {
+  bg:			#000000;
+  fg:			#FFFFFF;
+  button:		#000000;
+  background-color:	@bg;
+  text-color:		@fg; 
+}
+

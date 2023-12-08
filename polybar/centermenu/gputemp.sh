@@ -1,0 +1,1 @@
+nvidia-smi -q -d temperature | grep "GPU Current Temp" | sed "s/ //g" | sed "s/GPUCurrentTemp://g" | sed "s/C//g"
