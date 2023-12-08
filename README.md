@@ -1,5 +1,6 @@
 # photosynthesis-dots
 my dotfiles for newest rice
+its green, specifically #0f110f is the main colour
 
 same reqs as other rice
 
@@ -23,6 +24,3 @@ Application reqs:
   Kitty,
   Neofetch,
   Firefox
-
--- 
-thanks
